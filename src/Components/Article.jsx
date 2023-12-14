@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 function Article({
   title,
   topic,
@@ -8,8 +10,6 @@ function Article({
   article_image_url,
   comment_count,
 }) {
-
-    {console.log(article_image_url)}
   return (
     <div className="article">
         
