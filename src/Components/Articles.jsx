@@ -1,17 +1,17 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Article from "./Article";
 import { fetchArticlesData } from "../utils/utils";
+import { FetchedArticles } from "../App";
 
 function Articles() {
   const [isLoading, setIsLoading] = useState(true);
   const [articles, setArticles] = useState([]);
 
   useEffect(() => {
-    fetchArticlesData()
-      .then((data) => {
-        setArticles(data);
-        setIsLoading(false);
-      });
+    fetchArticlesData().then((data) => {
+      setArticles(data);
+      setIsLoading(false);
+    });
   }, []);
 
   if (isLoading) {
@@ -33,6 +33,7 @@ function Articles() {
             return (
               <Article
                 key={article.article_id}
+                article_id={article.article_id}
                 title={article.title}
                 topic={article.topic}
                 author={article.author}

@@ -1,6 +1,9 @@
 import { Link } from "react-router-dom";
+import { ArticleContext } from "../App";
+import { useContext } from "react";
 
 function Article({
+  article_id,
   title,
   topic,
   author,
@@ -10,10 +13,22 @@ function Article({
   article_image_url,
   comment_count,
 }) {
+  const { articleId, setArticleId } = useContext(ArticleContext);
+
+  const handleRedirect = (idAsProp) => {
+    setArticleId(idAsProp);
+  };
+
   return (
     <div className="article">
-        
-      <h4>{title}</h4>
+      <Link
+        to={`/${article_id}`}
+        onClick={() => {
+          handleRedirect(article_id);
+        }}
+      >
+        <h4>{title}</h4>
+      </Link>
       {article_image_url ? (
         <img src={article_image_url} alt={`image by ${author}`} />
       ) : null}
@@ -26,8 +41,7 @@ function Article({
         <p>{votes}</p>
       </div>
       <div className="comments">
-        <button>Show Comments</button>
-        <p>{comment_count}</p>
+        <button>Comments {comment_count}</button>
       </div>
     </div>
   );
