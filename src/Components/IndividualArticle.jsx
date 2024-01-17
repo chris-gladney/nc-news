@@ -21,6 +21,12 @@ function IndividualArticle() {
         <h2>Page is Loading</h2>
       </div>
     );
+  } else if (!article) {
+    return (
+      <div className="unavailable-article">
+        <h2>No Article Exists</h2>
+      </div>
+    );
   } else {
     return (
       <Article

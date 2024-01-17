@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { ArticlePathContext } from "../App";
-import { useContext } from "react";
+import { useContext, useState } from "react";
+import Comments from "./Comments";
 
 function Article({
   article_id,
@@ -14,6 +15,7 @@ function Article({
   comment_count,
 }) {
   const { setArticle_id } = useContext(ArticlePathContext);
+  const [showComments, setShowComments] = useState(false);
 
   const handleRedirect = (article_id) => {
     setArticle_id(article_id);
@@ -41,8 +43,15 @@ function Article({
         <p>{votes}</p>
       </div>
       <div className="comments">
-        <button>Comments {comment_count}</button>
-      </div>
+          {showComments ? <Comments article_id={article_id} /> : ""}
+          <button
+            onClick={() => {
+              setShowComments(!showComments);
+            }}
+          >
+            Comments {comment_count}
+          </button>
+        </div>
     </div>
   );
 }
