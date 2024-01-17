@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArticleContext } from "../App";
+import { ArticlePathContext } from "../App";
 import { useContext } from "react";
 
 function Article({
@@ -13,10 +13,10 @@ function Article({
   article_image_url,
   comment_count,
 }) {
-  const { articleId, setArticleId } = useContext(ArticleContext);
+  const { setArticle_id } = useContext(ArticlePathContext);
 
-  const handleRedirect = (idAsProp) => {
-    setArticleId(idAsProp);
+  const handleRedirect = (article_id) => {
+    setArticle_id(article_id);
   };
 
   return (
