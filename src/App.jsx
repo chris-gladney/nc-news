@@ -1,7 +1,7 @@
 import { useState, createContext } from "react";
 import "./App.css";
 import Articles from "./Components/Articles";
-import Article from "./Components/Article";
+import IndividualArticle from "./Components/IndividualArticle";
 import Header from "./Components/Header";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
@@ -26,7 +26,7 @@ function App() {
         <Routes>
           {/* <Route
             path={`/${articleId}`}
-            element={<Article />}
+            element={<IndividualArticle />}
           ></Route> */}
           <Route
             path="/"

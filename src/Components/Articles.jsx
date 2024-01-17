@@ -1,7 +1,6 @@
-import { useContext, useEffect, useState } from "react";
+import {  useEffect, useState } from "react";
 import Article from "./Article";
 import { fetchArticlesData } from "../utils/utils";
-import { FetchedArticles } from "../App";
 
 function Articles() {
   const [isLoading, setIsLoading] = useState(true);
@@ -25,6 +24,7 @@ function Articles() {
       <div className="articles-container">
         <h2 className="article-title">Articles</h2>
         <select className="sort_by">
+          <option value=""></option>
           <option value="date">Date</option>
           <option value="topic">Topic</option>
         </select>
