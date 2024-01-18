@@ -16,7 +16,7 @@ export const fetchArticlesData = (article_id) => {
 
 export const fetchCommentsData = (article_id) => {
   return fetch(
-    `https://chris-reddit.onrender.com/api/${article_id}/comments`
+    `https://chris-reddit.onrender.com/api/articles/${article_id}/comments`
   ).then((res) => {
     return res.json();
   });
