@@ -37,3 +37,16 @@ h1 {
 .articles img {
   width: 100%;
 }
+
+.votes-container img {
+  width: 40px;
+  margin: 0 auto;
+}
+
+.vote {
+  padding: 0 5px 0 0;
+}
+
+.clicked-vote {
+  background-color: red;
+}
