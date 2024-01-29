@@ -63,3 +63,4 @@ export const fetchAllUsers = () => {
     return res.json();
   });
 };
+

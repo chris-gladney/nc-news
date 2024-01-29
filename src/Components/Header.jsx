@@ -9,7 +9,7 @@ function Header({ setUser }) {
         }}
         to="/"
       >
-        <h1>NORTHCODERS NEWS</h1>
+        <h1 className="title">NORTHCODERS NEWS</h1>
       </Link>
     </>
   );

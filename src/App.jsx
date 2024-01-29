@@ -1,4 +1,4 @@
-import { useState, createContext } from "react";
+import { useState, createContext, useEffect } from "react";
 import "./App.css";
 import Articles from "./Components/Articles";
 import IndividualArticle from "./Components/IndividualArticle";
@@ -12,6 +12,11 @@ export const ArticlePathContext = createContext("");
 function App() {
   const [article_id, setArticle_id] = useState("");
   const [user, setUser] = useState("");
+  const [topics, setTopics] = useState([]);
+
+  useEffect(() => {
+    
+  }, [])
 
   return (
     <ArticlePathContext.Provider value={{ article_id, setArticle_id }}>
