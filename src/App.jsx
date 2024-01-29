@@ -4,21 +4,26 @@ import Articles from "./Components/Articles";
 import IndividualArticle from "./Components/IndividualArticle";
 import Header from "./Components/Header";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Login from "./Components/Login";
+import User from "./Components/User";
 
 export const ArticlePathContext = createContext("");
 
 function App() {
   const [article_id, setArticle_id] = useState("");
+  const [user, setUser] = useState("");
 
   return (
     <ArticlePathContext.Provider value={{ article_id, setArticle_id }}>
       <BrowserRouter>
-        <Header />
+        <Header setUser={setUser} />
+        {user ? <User user={user} /> : ""}
         <Routes>
-          <Route path="/" element={<Articles />}></Route>
+          <Route path="/" element={<Login setUser={setUser} />}></Route>
+          <Route path="/articles" element={<Articles user={user} />}></Route>
           <Route
             path={`/${article_id}`}
-            element={<IndividualArticle />}
+            element={<IndividualArticle user={user} />}
           ></Route>
         </Routes>
       </BrowserRouter>
