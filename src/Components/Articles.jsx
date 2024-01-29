@@ -31,11 +31,10 @@ function Articles({ user }) {
   } else {
     return (
       <div className="articles-container">
-        <h2 className="article-title">Articles</h2>
+        <h2 className="article-title">Topics</h2>
         <select className="sort_by">
           <option value=""></option>
-          <option value="date">Date</option>
-          <option value="topic">Topic</option>
+          {}
         </select>
         <div className="articles">
           {articles.map((article) => {

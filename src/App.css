@@ -1,77 +1,91 @@
-#root {
-  width: 66.6666%;
-  height: 100vh;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-}
+@media only screen and (max-width: 1000px) {
+  #root {
+    width: 100vw;
+    height: 100vh;
+    margin: auto 0;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  h1 {
+    margin: 0 auto;
+    text-align: center;
+    height: 100px;
+  }
 
-h1 {
-  margin: 0 auto;
-  text-align: center;
-  height: 100px;
-}
+  .title {
+    font-size: 35px;
+  }
+  
+  .articles-container {
+    display: flex;
+    margin: 50px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 0;
+    height: 25%;
+    width: 100%;
+  }
+  
+  .articles {
+    width: 100%;
+  }
+  
+  .article {
+    background-color: rgb(249, 222, 222);
+    border-radius: 20px;
+    padding: 10px;
+    margin: 10px;
+  }
+  
+  .articles img {
+    width: 100%;
+  }
+  
+  .votes-container img {
+    width: 40px;
+    margin: 0 auto;
+  }
+  
+  .vote {
+    padding: 0 5px 0 0;
+  }
+  
+  .clicked-vote {
+    background-color: red;
+  }
+  
+  .unclicked-profile {
+    width: 50px;
+    position: absolute;
+    top: 100px;
+    right: 10%;
+    border-radius: 50%;
+  }
+  
+  .clicked-profile {
+    background-color: white;
+    border-radius: 10%;
+    position: absolute;
+    width: 200px;
+    right: 0;
+    top: 100px;
+  }
+  
+  .clicked-profile img {
+    position: absolute;
+    width: 50px;
+    right: 10%;
+  }
 
-.articles-container {
-  display: flex;
-  margin: 50px;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin: 0;
-  height: 25%;
-  width: 50%;
-}
+  .login-form {
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+  }
 
-.articles {
-  width: 100%;
-}
-
-.article {
-  background-color: rgb(249, 222, 222);
-  border-radius: 20px;
-  padding: 10px;
-  margin: 10px;
-}
-
-.articles img {
-  width: 100%;
-}
-
-.votes-container img {
-  width: 40px;
-  margin: 0 auto;
-}
-
-.vote {
-  padding: 0 5px 0 0;
-}
-
-.clicked-vote {
-  background-color: red;
-}
-
-.unclicked-profile {
-  height: 50px;
-  width: 50px;
-  position: absolute;
-  top: 100px;
-  right: 10%;
-  border-radius: 50%;
-}
-
-.clicked-profile {
-  width: 150px;
-  right: 10%;
-  top: 100px;
-}
-
-.clicked-profile img {
-  width: 50px;
-  right: 0
-}
-
-.clicked-profile h3, .clicked-profile p, .clicked-profile img {
-  right: 0;
-
+  .login-form button {
+    background-color: aqua;
+  }
 }
