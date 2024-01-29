@@ -1,9 +1,14 @@
 import { Link } from "react-router-dom";
 
-function Header() {
+function Header({ setUser }) {
   return (
     <>
-      <Link to="/">
+      <Link
+        onClick={() => {
+          setUser({});
+        }}
+        to="/"
+      >
         <h1>NORTHCODERS NEWS</h1>
       </Link>
     </>

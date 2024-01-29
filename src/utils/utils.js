@@ -54,7 +54,12 @@ export const patchVotes = (
     },
     body: JSON.stringify(patchObject),
   }).then((res) => {
-    
+    return res.json();
+  });
+};
+
+export const fetchAllUsers = () => {
+  return fetch(`https://chris-reddit.onrender.com/api/users`).then((res) => {
     return res.json();
   });
 };

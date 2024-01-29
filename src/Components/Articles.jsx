@@ -1,8 +1,9 @@
-import {  useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Article from "./Article";
 import { fetchArticlesData } from "../utils/utils";
+import { Link } from "react-router-dom";
 
-function Articles() {
+function Articles({ user }) {
   const [isLoading, setIsLoading] = useState(true);
   const [articles, setArticles] = useState([]);
 
@@ -18,6 +19,14 @@ function Articles() {
       <div className="isLoading">
         <h2>Page is Loading</h2>
       </div>
+    );
+  } else if (!user) {
+    return (
+      <>
+        <Link to="/">
+          <button>Login to view articles</button>
+        </Link>
+      </>
     );
   } else {
     return (

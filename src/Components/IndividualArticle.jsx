@@ -3,7 +3,7 @@ import { ArticlePathContext } from "../App";
 import Article from "./Article";
 import { fetchArticlesData } from "../utils/utils";
 
-function IndividualArticle() {
+function IndividualArticle({ user }) {
   const [isLoading, setIsLoading] = useState(true);
   const { article_id } = useContext(ArticlePathContext);
   const [article, setArticle] = useState([]);

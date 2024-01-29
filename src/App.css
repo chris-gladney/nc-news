@@ -50,3 +50,28 @@ h1 {
 .clicked-vote {
   background-color: red;
 }
+
+.unclicked-profile {
+  height: 50px;
+  width: 50px;
+  position: absolute;
+  top: 100px;
+  right: 10%;
+  border-radius: 50%;
+}
+
+.clicked-profile {
+  width: 150px;
+  right: 10%;
+  top: 100px;
+}
+
+.clicked-profile img {
+  width: 50px;
+  right: 0
+}
+
+.clicked-profile h3, .clicked-profile p, .clicked-profile img {
+  right: 0;
+
+}
