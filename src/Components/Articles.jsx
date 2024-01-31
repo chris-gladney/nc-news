@@ -21,7 +21,11 @@ function Articles({ user }) {
 
   const handleTopicChange = (event) => {
     const newTopic = event.target.value;
-    setTopicQuery(`topic=${newTopic}`);
+    if (newTopic) {
+      setTopicQuery(`topic=${newTopic}`);
+    } else {
+      setTopicQuery("");
+    }
   };
 
   if (isLoading) {
