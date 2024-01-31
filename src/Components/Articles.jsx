@@ -1,18 +1,28 @@
 import { useEffect, useState } from "react";
 import Article from "./Article";
-import { fetchArticlesData } from "../utils/utils";
+import { fetchArticlesData, fetchTopics } from "../utils/utils";
 import { Link } from "react-router-dom";
 
 function Articles({ user }) {
   const [isLoading, setIsLoading] = useState(true);
   const [articles, setArticles] = useState([]);
+  const [topics, setTopics] = useState([]);
+  const [topicQuery, setTopicQuery] = useState("");
 
   useEffect(() => {
-    fetchArticlesData().then((data) => {
+    fetchTopics().then((data) => {
+      setTopics(data);
+    });
+    fetchArticlesData(false, topicQuery).then((data) => {
       setArticles(data);
       setIsLoading(false);
     });
-  }, []);
+  }, [topicQuery]);
+
+  const handleTopicChange = (event) => {
+    const newTopic = event.target.value;
+    setTopicQuery(`topic=${newTopic}`);
+  };
 
   if (isLoading) {
     return (
@@ -31,13 +41,24 @@ function Articles({ user }) {
   } else {
     return (
       <div className="articles-container">
-        <div className="topics-container">
-          <h2 className="topics">Topics</h2>
-          <select className="topics-select">
-            <option value=""></option>
-            {}
-          </select>
-        </div>
+
+        <h2 className="article-title">Topics</h2>
+        <select
+          className="sort_by"
+          onChange={(event) => {
+            handleTopicChange(event);
+          }}
+        >
+          <option value=""></option>
+          {topics.map((topic) => {
+            return (
+              <option key={topic.slug} value={topic.slug}>
+                {topic.slug}
+              </option>
+            );
+          })}
+        </select>
+
         <div className="articles">
           {articles.map((article) => {
             return (

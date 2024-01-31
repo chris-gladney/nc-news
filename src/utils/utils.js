@@ -1,7 +1,18 @@
-export const fetchArticlesData = (article_id) => {
+export const fetchArticlesData = (article_id, topicQuery = "") => {
+  let queryString = "";
+  if (topicQuery) {
+    queryString += `?${topicQuery}`;
+  }
+  console.log(queryString);
   if (article_id) {
     return fetch(
       `https://chris-reddit.onrender.com/api/articles/${article_id}`
+    ).then((res) => {
+      return res.json();
+    });
+  } else if (queryString) {
+    return fetch(
+      `https://chris-reddit.onrender.com/api/articles${queryString}`
     ).then((res) => {
       return res.json();
     });
@@ -64,3 +75,8 @@ export const fetchAllUsers = () => {
   });
 };
 
+export const fetchTopics = () => {
+  return fetch(`https://chris-reddit.onrender.com/api/topics`).then((res) => {
+    return res.json();
+  });
+};
