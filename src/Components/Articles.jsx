@@ -41,6 +41,7 @@ function Articles({ user }) {
   } else {
     return (
       <div className="articles-container">
+
         <h2 className="article-title">Topics</h2>
         <select
           className="sort_by"
@@ -57,6 +58,7 @@ function Articles({ user }) {
             );
           })}
         </select>
+
         <div className="articles">
           {articles.map((article) => {
             return (

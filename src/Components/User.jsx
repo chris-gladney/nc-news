@@ -26,7 +26,7 @@ function User({ user }) {
             setViewWholeProfile(false);
           }}
         />
-        <h3>Hello {user.name}!</h3>
+        <h3>Hello <br /> {user.name}!</h3>
         <p>{user.username}</p>
       </div>
     );
