@@ -41,7 +41,6 @@ function Articles({ user }) {
   } else {
     return (
       <div className="articles-container">
-
         <h2 className="article-title">Topics</h2>
         <select
           className="sort_by"

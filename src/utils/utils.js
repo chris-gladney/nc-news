@@ -2,8 +2,9 @@ export const fetchArticlesData = (article_id, topicQuery = "") => {
   let queryString = "";
   if (topicQuery) {
     queryString += `?${topicQuery}`;
+  } else {
+    queryString = "";
   }
-  console.log(queryString);
   if (article_id) {
     return fetch(
       `https://chris-reddit.onrender.com/api/articles/${article_id}`
