@@ -23,7 +23,7 @@ function Votes({
       <div className="votes-container">
         <img
           className={`vote ${upVote ? "clicked-vote" : "unclicked-vote"}`}
-          src={"../../images/upvote.png"}
+          src={`${__dirname}../../images/upvote.png`}
           onClick={() => {
             patchVotes(article_id, upVote, downVote, displayedVotes, setDisplayedVotes, true);
             if (upVote === false) {
@@ -37,7 +37,7 @@ function Votes({
         />
         <img
           className={`vote ${downVote ? "clicked-vote" : "unclicked-vote"}`}
-          src={"../../images/downvote.png"}
+          src={`${__dirname}../../images/downvote.png`}
           onClick={() => {
             patchVotes(article_id, upVote, downVote, displayedVotes, setDisplayedVotes, false);
             if (downVote === false) {
