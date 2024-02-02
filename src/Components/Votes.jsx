@@ -42,28 +42,7 @@ function Votes({
         >
           👍
         </p>
-        {/* <img
-          className={`vote ${upVote ? "clicked-vote" : "unclicked-vote"}`}
-          src={`../../images/upvote.png`}
-          alt="👍"
-          onClick={() => {
-            patchVotes(
-              article_id,
-              upVote,
-              downVote,
-              displayedVotes,
-              setDisplayedVotes,
-              true
-            );
-            if (upVote === false) {
-              setUpVote(true);
-              setDownVote(false);
-            } else if (upVote === true) {
-              setUpVote(false);
-              setDownVote(false);
-            }
-          }}
-        /> */}
+
         <p
           className={`vote ${downVote ? "clicked-vote" : "unclicked-vote"}`}
           onClick={() => {
@@ -86,28 +65,6 @@ function Votes({
         >
           👎
         </p>
-        {/* <img
-          className={`vote ${downVote ? "clicked-vote" : "unclicked-vote"}`}
-          src={`../../images/downvote.png`}
-          alt="👎"
-          onClick={() => {
-            patchVotes(
-              article_id,
-              upVote,
-              downVote,
-              displayedVotes,
-              setDisplayedVotes,
-              false
-            );
-            if (downVote === false) {
-              setUpVote(false);
-              setDownVote(true);
-            } else if (downVote === true) {
-              setUpVote(false);
-              setDownVote(false);
-            }
-          }}
-        /> */}
       </div>
     </>
   );
