@@ -57,6 +57,11 @@
   .clicked-vote {
     border: solid black;
     border-radius: 25%;
+    display: inline-block;
+  }
+
+  .unclicked-vote {
+    display: inline-block;
   }
 
   .unclicked-profile {
@@ -179,6 +184,19 @@
   .clicked-vote {
     border: solid black;
     border-radius: 25%;
+    display: inline-block;
+  }
+
+  .unclicked-vote {
+    display: inline-block;
+  }
+
+  .clicked-vote:hover {
+    cursor: pointer;
+  }
+
+  .unclicked-vote {
+    cursor: pointer;
   }
 
   .unclicked-profile {
