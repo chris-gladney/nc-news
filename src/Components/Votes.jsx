@@ -9,7 +9,6 @@ function Votes({
   setDownVote,
   setUpVote,
 }) {
-  
   const [displayedVotes, setDisplayedVotes] = useState(votes);
 
   useEffect(() => {}, [displayedVotes]);
@@ -21,12 +20,17 @@ function Votes({
         <p>{displayedVotes}</p>
       </div>
       <div className="votes-container">
-        <img
+        <p
           className={`vote ${upVote ? "clicked-vote" : "unclicked-vote"}`}
-          src={`../../images/upvote.png`}
-          alt="👍"
           onClick={() => {
-            patchVotes(article_id, upVote, downVote, displayedVotes, setDisplayedVotes, true);
+            patchVotes(
+              article_id,
+              upVote,
+              downVote,
+              displayedVotes,
+              setDisplayedVotes,
+              true
+            );
             if (upVote === false) {
               setUpVote(true);
               setDownVote(false);
@@ -35,13 +39,42 @@ function Votes({
               setDownVote(false);
             }
           }}
-        />
-        <img
-          className={`vote ${downVote ? "clicked-vote" : "unclicked-vote"}`}
-          src={`../../images/downvote.png`}
-          alt="👎"
+        >
+          👍
+        </p>
+        {/* <img
+          className={`vote ${upVote ? "clicked-vote" : "unclicked-vote"}`}
+          src={`../../images/upvote.png`}
+          alt="👍"
           onClick={() => {
-            patchVotes(article_id, upVote, downVote, displayedVotes, setDisplayedVotes, false);
+            patchVotes(
+              article_id,
+              upVote,
+              downVote,
+              displayedVotes,
+              setDisplayedVotes,
+              true
+            );
+            if (upVote === false) {
+              setUpVote(true);
+              setDownVote(false);
+            } else if (upVote === true) {
+              setUpVote(false);
+              setDownVote(false);
+            }
+          }}
+        /> */}
+        <p
+          className={`vote ${downVote ? "clicked-vote" : "unclicked-vote"}`}
+          onClick={() => {
+            patchVotes(
+              article_id,
+              upVote,
+              downVote,
+              displayedVotes,
+              setDisplayedVotes,
+              false
+            );
             if (downVote === false) {
               setUpVote(false);
               setDownVote(true);
@@ -50,7 +83,31 @@ function Votes({
               setDownVote(false);
             }
           }}
-        />
+        >
+          👎
+        </p>
+        {/* <img
+          className={`vote ${downVote ? "clicked-vote" : "unclicked-vote"}`}
+          src={`../../images/downvote.png`}
+          alt="👎"
+          onClick={() => {
+            patchVotes(
+              article_id,
+              upVote,
+              downVote,
+              displayedVotes,
+              setDisplayedVotes,
+              false
+            );
+            if (downVote === false) {
+              setUpVote(false);
+              setDownVote(true);
+            } else if (downVote === true) {
+              setUpVote(false);
+              setDownVote(false);
+            }
+          }}
+        /> */}
       </div>
     </>
   );
